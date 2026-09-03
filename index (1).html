@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORAVIA — رحلة الأسنان الحيّة</title>
+<meta name="description" content="ORAVIA — الطبقة السريرية التي تحفظ استمرارية رحلة علاج كل مريض.">
+
+<!--
+  Optional web fonts. If there is no internet connection the deck falls back to
+  the system Arabic/Latin stack declared in styles.css and still renders correctly.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#deck">تخطّي إلى العرض</a>
+
+<!-- ═══ Persistent chrome ═══════════════════════════════════════════ -->
+
+<header class="chrome chrome--brand">
+  <svg class="mark" viewBox="0 0 32 44" aria-hidden="true">
+    <!-- crown arch -->
+    <path class="mark__crown" d="M6 13c0-5.5 4.5-9 10-9s10 3.5 10 9c0 3.2-1.6 5.4-3.4 7.2"/>
+    <!-- root descending, becoming the journey thread -->
+    <path class="mark__root" d="M16 12v14"/>
+    <path class="mark__thread" d="M16 26v12"/>
+    <circle class="mark__node" cx="16" cy="26" r="1.7"/>
+    <circle class="mark__node" cx="16" cy="32" r="1.7"/>
+    <circle class="mark__node mark__node--now" cx="16" cy="38" r="2.6"/>
+  </svg>
+  <span class="wordmark">ORAVIA</span>
+</header>
+
+<!-- The journey rail: progress indicator, expressed as the product's own metaphor -->
+<nav class="rail" aria-label="التنقّل بين الشرائح">
+  <ol class="rail__list" id="rail"></ol>
+</nav>
+
+<div class="chrome chrome--counter" aria-hidden="true">
+  <span id="counter-now">01</span><span class="counter__sep">/</span><span id="counter-all">18</span>
+</div>
+
+<!-- ═══ Deck ════════════════════════════════════════════════════════ -->
+
+<main id="deck" class="deck">
+
+<!-- 01 ─ COVER ──────────────────────────────────────────────────── -->
+<section class="slide slide--cover" data-title="الغلاف" aria-label="1. ORAVIA">
+  <div class="cover">
+    <svg class="cover__mark" viewBox="0 0 32 44" aria-hidden="true">
+      <path class="mark__crown" d="M6 13c0-5.5 4.5-9 10-9s10 3.5 10 9c0 3.2-1.6 5.4-3.4 7.2"/>
+      <path class="mark__root" d="M16 12v14"/>
+      <path class="mark__thread" d="M16 26v12"/>
+      <circle class="mark__node" cx="16" cy="26" r="1.7"/>
+      <circle class="mark__node" cx="16" cy="32" r="1.7"/>
+      <circle class="mark__node mark__node--now" cx="16" cy="38" r="2.6"/>
+    </svg>
+    <h1 class="cover__name">ORAVIA</h1>
+    <p class="cover__descriptor">رحلة الأسنان الحيّة</p>
+    <p class="cover__tagline">كل سن. كل حصة. كل خطوة قادمة.</p>
+  </div>
+</section>
+
+<!-- 02 ─ THE PROBLEM ────────────────────────────────────────────── -->
+<section class="slide" data-title="المشكلة" aria-label="2. المشكلة">
+  <div class="wrap wrap--split">
+    <div>
+      <p class="kicker">المشكلة</p>
+      <h2 class="display">ملفّ المريض يعرف ماذا حدث،<br>لكنّه لا يخبر الطبيب أين وصل العلاج.</h2>
+    </div>
+    <div class="stack">
+      <p class="lede">البرمجيات الحالية تسجّل <em>الحالة</em>. لا تسجّل <em>المسار</em>.</p>
+      <p>مخطّط الأسنان يقول إنّ السن 46 عليها علاج جذور. لا يقول في أيّ حصة نحن، ولا ما الذي بقي، ولا متى كان يُفترض أن تكتمل.</p>
+      <p>الفارق بين السؤالين هو الفارق بين أرشيف وذاكرة.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 ─ THE INVISIBLE PROBLEM ──────────────────────────────────── -->
+<section class="slide" data-title="التفتّت" aria-label="3. المشكلة غير المرئية">
+  <div class="wrap">
+    <p class="kicker">المشكلة غير المرئية</p>
+    <h2 class="display display--sm">مسار واحد، موزّع على سبعة أماكن لا يتحدّث أيّ منها إلى الآخر.</h2>
+
+    <ol class="frag" id="frag">
+      <li>موعد</li><li>ملاحظات ورقية</li><li>ذاكرة الطبيب</li><li>صور وأشعّة</li>
+      <li>واتساب</li><li>جدول Excel</li><li>متابعة منسيّة</li><li class="frag__end">علاج غير مكتمل</li>
+    </ol>
+
+    <figure class="evidence">
+      <blockquote>
+        في دراسة تتبّعية على 20 عيادة أسنان عمومية في السويد، من بين علاجات الجذور التي <em>بدأت</em>،
+        اكتملت <b>65.4٪</b> فقط بحشو الجذر — وفي الأرحاء <b>56.6٪</b> فقط.
+      </blockquote>
+      <figcaption>
+        Wigsten et al., دراسة أترابية تتبّعية 7–9 سنوات، الخدمة العمومية لطب الأسنان بالسويد، <cite>International Endodontic Journal</cite>.
+        <span class="qualify">مرجع دولي، وليس رقمًا تونسيًا. يُثبت أنّ عدم اكتمال العلاج ظاهرة موثّقة وقابلة للقياس داخل نظام صحّي جيّد التوثيق.</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 04 ─ THE INSIGHT ────────────────────────────────────────────── -->
+<section class="slide slide--insight" data-title="الرؤية" aria-label="4. الفكرة الجوهرية">
+  <div class="wrap wrap--centered">
+    <p class="kicker">الفكرة الجوهرية</p>
+    <h2 class="display display--lg">نحن لا نحتاج ملفًّا رقميًّا أفضل.<br>نحتاج <span class="now">ذاكرة حيّة</span> لرحلة العلاج.</h2>
+    <p class="footnote">الجذر غير المكتمل ليس فاتورة ضائعة. في دراسة على 60 حالة التهاب فكّي‑وجهي استدعت الإقامة بالمستشفى، كان علاج الجذور <em>غير المكتمل</em> عامل الخطر الأول في 27٪ من الحالات، مقابل 12٪ للعلاج المكتمل. <cite>Clinical Oral Investigations</cite>.</p>
+  </div>
+</section>
+
+<!-- 05 ─ THE SOLUTION ───────────────────────────────────────────── -->
+<section class="slide" data-title="الحل" aria-label="5. الحل">
+  <div class="wrap">
+    <p class="kicker">الحل</p>
+    <h2 class="display display--sm">ORAVIA يبني المنتج كلّه فوق علاقة واحدة.</h2>
+    <p class="lede">لا شيء داخل النظام يوجد خارج هذه السلسلة. هذا القرار وحده هو ما يجعل الاستمرارية قابلة للحساب بدل أن تكون قابلة للتذكّر.</p>
+
+    <ol class="chain">
+      <li><span class="chain__ar">المريض</span><span class="chain__en">Patient</span></li>
+      <li><span class="chain__ar">الحالة العلاجية</span><span class="chain__en">Case</span></li>
+      <li><span class="chain__ar">السن</span><span class="chain__en">Tooth</span></li>
+      <li><span class="chain__ar">الحصة</span><span class="chain__en">Session</span></li>
+      <li><span class="chain__ar">الدليل</span><span class="chain__en">Evidence</span></li>
+      <li class="chain__now"><span class="chain__ar">الخطوة القادمة</span><span class="chain__en">Next Step</span></li>
+    </ol>
+
+    <p class="footnote">برمجيّات إدارة العيادات تنمذج: مريض + موعد + عمل طبّي. الحالة العلاجية ككائن مستقلّ له دورة حياة هي الحلقة المفقودة.</p>
+  </div>
+</section>
+
+<!-- 06 ─ FOUR ENGINES ───────────────────────────────────────────── -->
+<section class="slide" data-title="المحرّكات" aria-label="6. المحرّكات الأربعة">
+  <div class="wrap">
+    <p class="kicker">ركائز المنتج</p>
+    <h2 class="display display--sm">أربعة محرّكات. كلّ ميزة تخدم واحدًا منها، أو لا تُبنى.</h2>
+    <div class="engines">
+      <article class="engine"><p class="engine__q">ماذا حدث؟</p><h3>الذاكرة السنّية</h3><p>كلّ حدث سريري قابل للتتبّع. السجلّ لا يُمحى عند التعديل — تُضاف نسخة جديدة ويبقى ما سبق مقروءًا.</p></article>
+      <article class="engine"><p class="engine__q">أين نحن الآن؟</p><h3>رحلة العلاج</h3><p>الحالة لها مراحل صريحة، ومرحلة جارية، ونسبة إنجاز، وموعد استحقاق سريري لكلّ مرحلة.</p></article>
+      <article class="engine"><p class="engine__q">ما الخطوة القادمة؟</p><h3>استمرارية المريض</h3><p>كشف من انقطع عن العلاج، وتحويله إلى مهمّة لها مالك وتاريخ استحقاق ونتيجة — لا إلى إشعار.</p></article>
+      <article class="engine"><p class="engine__q">ماذا يجري داخل عيادتي؟</p><h3>ذكاء العيادة</h3><p>لوحة تجيب أوّلًا عن «ما الذي يستدعي انتباهي اليوم؟» قبل أن تعرض أيّ إحصائية.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 07 ─ DENTAL MEMORY ──────────────────────────────────────────── -->
+<section class="slide" data-title="الذاكرة" aria-label="7. الذاكرة السنّية">
+  <div class="wrap wrap--split">
+    <div class="stack">
+      <p class="kicker">المحرّك الأول · الذاكرة السنّية</p>
+      <h2 class="display display--sm">السن كائن سريري طويل العمر، لا خانة في استمارة.</h2>
+      <p>يعود المريض بعد ستة أشهر، أو خمس سنوات. يختار الطبيب السن، فيقرأ قصّتها كاملة دون أن يعيد بناءها من الذاكرة.</p>
+      <p class="footnote">في نموذج البيانات، السن تتبع <em>المريض</em> لا <em>الحالة العلاجية</em>. هذا ما يسمح لتسوّس 2024 وعلاج جذور 2026 وتعويض التاج 2031 بأن يعيشوا على خيط واحد.</p>
+    </div>
+    <div class="tooth-history" id="tooth-history"></div>
+  </div>
+</section>
+
+<!-- 08 ─ LIVING DENTAL MAP ──────────────────────────────────────── -->
+<section class="slide" data-title="الخريطة" aria-label="8. الخريطة السنّية الحيّة">
+  <div class="wrap">
+    <p class="kicker">الواجهة السريرية</p>
+    <h2 class="display display--sm">كلّ سن تصبح نقطة معرفة مستقلّة داخل رحلة المريض.</h2>
+    <p class="lede">اختر أيّ سن. <span class="hint">النقر أو مفاتيح الأسهم داخل المخطّط.</span></p>
+
+    <div class="map">
+      <div class="map__chart">
+        <svg id="odontogram" viewBox="0 0 620 340" role="group" aria-label="مخطّط الأسنان بترقيم FDI"></svg>
+        <ul class="legend" id="legend"></ul>
+      </div>
+      <aside class="map__panel" id="tooth-panel" aria-live="polite"></aside>
+    </div>
+
+    <p class="footnote">اللون وحده لا ينقل حالة سريرية أبدًا. كلّ حالة تُعرض بلون <em>و</em>رمز <em>و</em>نصّ — شرط سلامة، لا خيار جمالي.</p>
+  </div>
+</section>
+
+<!-- 09 ─ TIME MACHINE ───────────────────────────────────────────── -->
+<section class="slide" data-title="آلة الزمن" aria-label="9. آلة الزمن">
+  <div class="wrap">
+    <p class="kicker">تجربة مميّزة</p>
+    <h2 class="display display--sm">آلة الزمن السنّية.</h2>
+    <p class="lede">الحالة الفموية للمريض عبر السنوات، لا لقطة واحدة.</p>
+
+    <div class="tm">
+      <div class="tm__scrub" role="group" aria-label="اختيار السنة"><div class="tm__years" id="tm-years"></div></div>
+      <div class="tm__stage">
+        <svg id="tm-chart" viewBox="0 0 620 190" role="img" aria-label="حالة الأسنان في السنة المختارة"></svg>
+        <p class="tm__caption" id="tm-caption" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 ─ VOICE ──────────────────────────────────────────────────── -->
+<section class="slide" data-title="الصوت" aria-label="10. الالتقاط الصوتي">
+  <div class="wrap">
+    <p class="kicker">التوثيق الصوتي</p>
+    <h2 class="display display--sm">الطبيب يتحدّث. ORAVIA ينظّم. <span class="now">الطبيب يوافق.</span></h2>
+    <p class="lede">يداه داخل الفم ومرتديتان قفّازين. الكتابة ليست خيارًا.</p>
+
+    <div class="voice">
+      <div class="voice__in">
+        <p class="voice__label">كلام العيادة كما يُقال فعلًا</p>
+        <p class="voice__utterance" id="utterance" aria-live="polite"></p>
+        <button class="btn" id="voice-run" type="button">شغّل المثال</button>
+      </div>
+
+      <div class="voice__out">
+        <p class="voice__label">استخراج البنية السريرية</p>
+        <dl class="slots" id="slots"></dl>
+        <div class="gate" id="gate" hidden>
+          <p class="gate__note">لا يدخل أيّ استنتاج آلي إلى السجلّ الرسمي قبل موافقة الطبيب. البوّابة مفروضة في مسار الكتابة نفسه، لا في الواجهة.</p>
+          <div class="gate__actions">
+            <button class="btn btn--ghost" id="gate-edit" type="button">تعديل</button>
+            <button class="btn btn--gold" id="gate-approve" type="button">موافقة وحفظ</button>
+          </div>
+        </div>
+        <p class="gate__done" id="gate-done" hidden>حُفظ في السجلّ السريري · وقّعه د. سلمى بن عمّار · سُجّل في سجلّ التدقيق</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 ─ TREATMENT JOURNEY ──────────────────────────────────────── -->
+<section class="slide" data-title="الرحلة" aria-label="11. رحلة العلاج">
+  <div class="wrap wrap--split">
+    <div class="stack">
+      <p class="kicker">المحرّك الثاني · رحلة العلاج</p>
+      <h2 class="display display--sm">«أين وصلنا؟» يصبح استعلامًا، لا محاولة تذكّر.</h2>
+      <p>لكلّ مرحلة مهلة سريرية متوقّعة. تجاوُزها ينتج تنبيهًا سريريًّا، لا مجرّد فجوة في الرزنامة.</p>
+      <p class="footnote">القوالب العلاجية يكتبها الطبيب. لا يقترح النظام تسلسلًا لم يعرّفه طبيب.</p>
+    </div>
+    <div class="case" id="case-card"></div>
+  </div>
+</section>
+
+<!-- 12 ─ CONTINUITY ─────────────────────────────────────────────── -->
+<section class="slide" data-title="الاستمرارية" aria-label="12. استمرارية المريض">
+  <div class="wrap">
+    <p class="kicker">المحرّك الثالث · استمرارية المريض</p>
+    <h2 class="display display--sm">الإشعار لا يكفي. المخرَج مهمّة لها مالك ونتيجة.</h2>
+    <div class="queue" id="queue"></div>
+    <p class="footnote">أهمّ كاشف في المنتج بسيط إلى حدّ الإحراج: <em>اكتملت حصة، ولم تُحجز التالية.</em> هنا تُفقد أغلب العلاجات، وهنا تُستعاد.</p>
+  </div>
+</section>
+
+<!-- 13 ─ PRACTICE INTELLIGENCE ──────────────────────────────────── -->
+<section class="slide" data-title="ذكاء العيادة" aria-label="13. ذكاء العيادة">
+  <div class="wrap">
+    <p class="kicker">المحرّك الرابع · ذكاء العيادة</p>
+    <h2 class="display display--sm">مؤشّر واحد يحاسَب عليه المنتج.</h2>
+    <div class="dash">
+      <div class="dash__hero">
+        <p class="dash__label">نسبة اكتمال العلاجات</p>
+        <p class="dash__value"><span id="kpi">—</span><span class="dash__unit">٪</span></p>
+        <svg id="kpi-chart" viewBox="0 0 340 120" role="img" aria-label="تطوّر نسبة اكتمال العلاجات على ستة أشهر"></svg>
+        <p class="dash__foot">بيانات عيادة تجريبية افتراضية</p>
+      </div>
+      <ul class="dash__grid" id="dash-grid"></ul>
+    </div>
+    <p class="footnote">إن نجح المنتج، يرتفع هذا الرقم. وإن لم يرتفع، فالمنتج لا يعمل. اختيار مؤشّر واحد قابل للتكذيب مقصود.</p>
+  </div>
+</section>
+
+<!-- 14 ─ PATIENT EXPERIENCE ─────────────────────────────────────── -->
+<section class="slide" data-title="المريض" aria-label="14. تجربة المريض">
+  <div class="wrap wrap--split">
+    <div class="stack">
+      <p class="kicker">تجربة المريض</p>
+      <h2 class="display display--sm">المريض يحتاج أن يفهم سؤالًا واحدًا: أين أنا في علاجي؟</h2>
+      <p>لا سجلّ سريري كامل، ولا مصطلحات. الخطوة الحالية، والخطوة القادمة، وسبب أهمّيتها.</p>
+      <p class="footnote">البوّابة تعرض ما وافق الطبيب على مشاركته فقط. الموافقة كائن في قاعدة البيانات له نطاق ومدّة وإمكانية سحب.</p>
+    </div>
+    <div class="phone">
+      <div class="phone__screen">
+        <p class="phone__hi">أهلًا أحمد</p>
+        <div class="phone__step">
+          <p class="phone__k">علاجك الحالي</p>
+          <p class="phone__v">السن 46 — علاج جذور</p>
+          <div class="phone__bar"><i style="inline-size:75%"></i></div>
+          <p class="phone__pct">3 من 4 حصص</p>
+        </div>
+        <div class="phone__next">
+          <p class="phone__k">الخطوة القادمة</p>
+          <p class="phone__v">حشو الجذر</p>
+          <p class="phone__when">الثلاثاء 15 سبتمبر · 15:30 · 45 دقيقة</p>
+        </div>
+        <p class="phone__note">تأجيل هذه الحصة يُبقي القناة مفتوحة. يُنصح بعدم تجاوز أسبوعين.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 ─ MARKET ─────────────────────────────────────────────────── -->
+<section class="slide" data-title="السوق" aria-label="15. السوق">
+  <div class="wrap">
+    <p class="kicker">السوق</p>
+    <h2 class="display display--sm">نبدأ من تونس — وهذا ما نعرفه فعلًا، وما لا نعرفه.</h2>
+
+    <div class="market">
+      <ol class="tam">
+        <li><span class="tam__k">TAM</span><span class="tam__v">أطباء الأسنان الممارسون في تونس</span><span class="tam__n">≈ 4,500 مسجّل بالعمادة · ≈ 3,000 بالقطاع الخاص</span><span class="tam__src">تصريح د. شكيب عيّاد، رئيس العمادة الوطنية لأطباء الأسنان، «L'Économiste Maghrébin»، مارس 2016</span></li>
+        <li><span class="tam__k">SAM</span><span class="tam__v">العيادات الخاصة القادرة على تبنّي حلّ سحابي مدفوع</span><span class="tam__n">فرضية قيد الاختبار</span><span class="tam__src">تُشتقّ من كثافة تونس الكبرى وصفاقس وسوسة، بعد تثبيت الرقم المرجعي</span></li>
+        <li><span class="tam__k">SOM</span><span class="tam__v">هدف السنتين الأوليَين</span><span class="tam__n">فرضية قيد الاختبار</span><span class="tam__src">تُبنى انطلاقًا من معدّل التحويل الفعلي في مجموعة التجريب الأولى</span></li>
+      </ol>
+
+      <aside class="gap">
+        <p class="gap__h">فجوة معطيات نعلنها بدل أن نملأها</p>
+        <p>الرقم الوحيد المتاح لعدد أطباء الأسنان في تونس يعود إلى 2016. اتّجاه النموّ واضح — نحو 300 خرّيج محلّي سنويًّا و150 من الخارج — أمّا الرقم المطلق فلا.</p>
+        <p>مسار الحصول عليه محدّد: طلب رسمي من العمادة الوطنية، ثم تثبيت من الخريطة الجهوية التي أعلنت وزارة الصحة والعمادة إعدادها في ماي 2025.</p>
+        <p class="gap__why">اختلاق مقام يقنع في عشر دقائق ويُسقط كلّ ما تبقّى في العشرين التالية.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 16 ─ COMPETITION ────────────────────────────────────────────── -->
+<section class="slide" data-title="المنافسة" aria-label="16. المشهد التنافسي">
+  <div class="wrap">
+    <p class="kicker">المشهد التنافسي</p>
+    <h2 class="display display--sm">السوق مشغول، والمنافس التونسي جيّد ورخيص.</h2>
+
+    <div class="comp">
+      <div class="matrix" role="img" aria-label="مصفوفة تموضع: المحور الأفقي عمق التوطين التونسي، يزداد نحو اليمين، المحور العمودي من إدارة العيادة إلى ذكاء رحلة العلاج. ORAVIA في الربع الأعلى الأكثر توطينًا.">
+        <span class="matrix__y1">ذكاء رحلة العلاج</span>
+        <span class="matrix__y0">إدارة العيادة</span>
+        <span class="matrix__x1">توطين تونسي عميق</span>
+        <span class="matrix__x0">حلّ عام</span>
+        <div class="matrix__grid">
+          <b class="dot dot--us" style="left:72%;top:16%">ORAVIA</b>
+          <b class="dot" style="left:76%;top:76%">DoliDentiste</b>
+          <b class="dot" style="left:64%;top:86%">Dentisys</b>
+          <b class="dot" style="left:52%;top:68%">ClinicFlow</b>
+          <b class="dot" style="left:20%;top:78%">Visiodent</b>
+        </div>
+      </div>
+
+      <div class="comp__read">
+        <h3>ما يحلّونه فعلًا — ولا نأخذ عليه أيّ فضل</h3>
+        <p>المواعيد، مخطّط الأسنان، الفوترة بالدينار، الوصفات، الوثائق، الإحصائيات الأساسية، والولوج من الهاتف. <b>DoliDentiste</b> يشحن 144 عملًا طبّيًّا من تعريفة STMDLP برموز DCH الرسمية، ومخطّطًا بثماني حالات، و42 دواءً معبّأً مسبقًا. هذه أرضية دخول، وشحنها شرط لا فضيلة.</p>
+        <h3>ما لا يحلّه أحد</h3>
+        <p>مخطّط بثماني حالات يسجّل ما <em>هي</em> السن اليوم. لا يسجّل كيف وصلت، ولا أين وقفت الحالة، ولا من سقط من علاج لم يكتمل. لغة تسويق المنافسين كلّها عن <em>الحالة</em> والإدارة. لا واحد منهم يتحدّث عن <em>الاستمرارية</em>.</p>
+        <p class="footnote">لا نفترض أنّنا نفوز بميزات أكثر. نفوز بنموذج منتج مختلف: من إدارة العيادة إلى ذكاء رحلة العلاج.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 17 ─ BUSINESS MODEL ─────────────────────────────────────────── -->
+<section class="slide" data-title="النموذج" aria-label="17. نموذج العمل">
+  <div class="wrap">
+    <p class="kicker">نموذج العمل</p>
+    <h2 class="display display--sm">اشتراك شهري — أمام مرساة سعرية معلنة في السوق.</h2>
+
+    <div class="anchor">
+      <p class="anchor__h">السعر المرجعي الذي يحمله الطبيب التونسي في ذهنه</p>
+      <p class="anchor__body"><b>DoliDentiste</b>: 500 د.ت تركيب لمرّة واحدة، ثم <b>80 د.ت شهريًّا</b> — أو 720 د.ت سنويًّا. السنة الأولى 1,460 د.ت، ثم 960 د.ت سنويًّا. <span class="anchor__src">تسعيرة منشورة على موقعهم.</span></p>
+      <p class="anchor__read">لا يمكن الفوز بحرب أسعار أمام هذا. المحادثة الوحيدة التي تحتمل سقفًا أعلى هي: كم من العلاجات المتوقّفة استعادت عيادتك؟</p>
+    </div>
+
+    <div class="tiers">
+      <article class="tier"><h3>Solo</h3><p class="tier__who">طبيب واحد، دون سكرتارية</p><p class="tier__f">المحرّكان الأول والثاني · مخطّط · حالات · جدول زمني</p></article>
+      <article class="tier tier--mid"><h3>Professional</h3><p class="tier__who">طبيب مع سكرتارية</p><p class="tier__f">يضيف محرّك الاستمرارية · قوائم المهامّ · شاشة اليوم · لوحة الانتباه</p></article>
+      <article class="tier"><h3>Clinic</h3><p class="tier__who">عدّة أطباء وكراسي</p><p class="tier__f">يضيف الأدوار المتقدّمة · ذكاء العيادة الكامل · استغلال الكراسي</p></article>
+    </div>
+
+    <p class="qualify qualify--block">التسعير فرضية أوّلية غير مُثبتة، خاضعة للتحقّق عبر التجريب. لن يُعرض رقم على عيادة قبل أن نُريها قيمة العلاجات التي استعادتها فعلًا خلال فترة التجريب.</p>
+  </div>
+</section>
+
+<!-- 18 ─ VISION ─────────────────────────────────────────────────── -->
+<section class="slide slide--vision" data-title="الرؤية" aria-label="18. الرؤية">
+  <div class="wrap wrap--centered">
+    <svg class="cover__mark cover__mark--sm" viewBox="0 0 32 44" aria-hidden="true">
+      <path class="mark__crown" d="M6 13c0-5.5 4.5-9 10-9s10 3.5 10 9c0 3.2-1.6 5.4-3.4 7.2"/>
+      <path class="mark__root" d="M16 12v14"/>
+      <path class="mark__thread" d="M16 26v12"/>
+      <circle class="mark__node" cx="16" cy="26" r="1.7"/>
+      <circle class="mark__node" cx="16" cy="32" r="1.7"/>
+      <circle class="mark__node mark__node--now" cx="16" cy="38" r="2.6"/>
+    </svg>
+    <h2 class="display display--lg">من برنامج لإدارة العيادة،<br>إلى <span class="now">الذاكرة الرقمية الحيّة</span> لطبّ الأسنان.</h2>
+    <p class="cover__tagline">كل سن. كل حصة. كل خطوة قادمة.</p>
+    <p class="footnote footnote--legal">ORAVIA مساعد للطبيب ولا يشخّص ولا يصف ولا يتّخذ قرارًا سريريًّا. البنية مصمّمة على أساس القانون الأساسي عدد 63 لسنة 2004 ومداولة الهيئة الوطنية لحماية المعطيات الشخصية عدد 4 المؤرّخة في 5 سبتمبر 2018؛ لا يُدَّعى أيّ امتثال قانوني قبل مصادقة مستشار قانوني تونسي مختصّ. كلّ البيانات المعروضة هنا خيالية.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ Controls ════════════════════════════════════════════════════ -->
+<div class="nav" role="group" aria-label="تنقّل">
+  <button class="nav__btn" id="prev" type="button" aria-label="الشريحة السابقة">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+  </button>
+  <button class="nav__btn" id="next" type="button" aria-label="الشريحة التالية">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+  </button>
+</div>
+
+<p class="hintbar" id="hintbar">استعمل ← و → للتنقّل · F لوضع العرض</p>
+
+<script src="app.js"></script>
+</body>
+</html>
